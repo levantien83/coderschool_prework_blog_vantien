@@ -1,14 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-sm-8">        
+    <ul>
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title"><%= @article.title %></h4>
+          <p class="date">Submitted <%= time_ago_in_words(@article.created_at) %> ago</p>
+          <p class="card-text"><%= @markdown.render(@article.body).html_safe %></p>          
+        </div>
+        <div class="card-footer">
+          <%= link_to 'Edit', edit_article_path(@article) %>
+          <%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    </ul> 
+  </div>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @article.body %>
-</p>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>

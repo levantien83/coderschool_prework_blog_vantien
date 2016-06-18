@@ -8,9 +8,16 @@
 	</head>
 	<body>
 		<div class="container bg-faded">
-			<h1>Valentine's blog</h1>
-			<button type="button" class="btn btn-primary btn-sm pull-right">Login</button>
-			<button type="button" class="btn btn-primary btn-sm pull-right">Logout</button>					
+			<div class="col-md-9">
+				<h1> <%= link_to "Valentine's blog" , '/articles' %> </h1>
+			</div>
+  			<div align="right">
+	  			<div class="col-md-3">
+	  				<h5></h5>
+					<button type="button" class="btn btn-primary-outline btn-sm pull-right">Login</button>
+					<button type="button" class="btn btn-primary-outline btn-sm pull-right">Logout</button>
+				</div>				
+			</div>	
 		</div>
 		<%= yield %>
 		<div class="container">
